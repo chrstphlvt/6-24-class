@@ -1,6 +1,17 @@
 package com.revature.b.variables;
 
+/**
+ * This class is used as a simple demo to show how to create and use variables.
+ * 
+ * @author btkru
+ *
+ */
 public class Variables {
+	/**
+	 * The entrypoint for the variables demo
+	 * 
+	 * @param args 
+	 */
 	public static void main(String[] args) {
 		boolean b = false;
 		
@@ -9,7 +20,7 @@ public class Variables {
 		short s = 27;
 		int i = 42;
 		long l = 3000000000l; // l signifies the literal number should be of type long
-		float f = 25.2f; // decimal literlas are assumed to be double by default
+		float f = 25.2f; // decimal literals are assumed to be double by default
 		double dub = 85.3;
 		
 		System.out.println("boolean b = " + b);
