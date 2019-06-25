@@ -18,8 +18,8 @@ public class FlowOfControl {
 	}
 
 	/**
-	 * Do-While is similar to while but it checks the condition at the end of the loop instead
-	 * of the start.  
+	 * Do-While is similar to while but it checks the condition at the end of the
+	 * loop instead of the start.
 	 * 
 	 * It means the loop will always execute at least 1 time
 	 */
@@ -29,7 +29,7 @@ public class FlowOfControl {
 		do {
 			System.out.println("enter input: ");
 			input = scan.nextLine();
-		} while(!input.equals("done"));
+		} while (!input.equals("done"));
 	}
 
 	public static void whileDemo() {
