@@ -1,6 +1,7 @@
 package com.revature.d.objects;
 
 public class Dog extends Animal {
+	private static long count = 0;
 
 	private String breed;
 	private String furLength;
@@ -13,6 +14,11 @@ public class Dog extends Animal {
 
 	public Dog(String name, boolean isAlive) {
 		super(name, isAlive);
+		count++;
+		if(count %10000 == 0) {
+			System.out.println(count);
+		}
+		
 		// TODO Auto-generated constructor stub
 	}
 
@@ -93,10 +99,8 @@ public class Dog extends Animal {
 
 	@Override
 	public String toString() {
-		int[] nums = new int[5];
 		return "Dog [breed=" + breed + ", furLength=" + furLength + ", size=" + size + ", getName=" + getName()
 				+ ", isAlive=" + isAlive() + "]";
 	}
-
 }
 

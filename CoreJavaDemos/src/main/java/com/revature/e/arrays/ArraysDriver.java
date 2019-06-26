@@ -32,6 +32,16 @@ public class ArraysDriver {
 		myPets[2] = new Dog("Haze", true, "chiuaua mix", "short", "small");
 		System.out.println(Arrays.toString(myPets));
 		
-
+		testTrace();
+	}
+	
+	public static void testTrace() {
+		Animal[] myPets = new Animal[3];
+		myPets[0] = new Dog("Rocky", true, "boxer? mix?", "long", "medium");
+		myPets[1] = new Dog("Drew", true, "chiuaua mix", "short", "small");
+		myPets[2] = new Dog("Haze", true, "chiuaua mix", "short", "small");
+		System.out.println(Arrays.toString(myPets));
+		
+		myPets[25] = null;
 	}
 }

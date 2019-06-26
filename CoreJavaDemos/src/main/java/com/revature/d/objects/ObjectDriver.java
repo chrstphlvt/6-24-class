@@ -22,6 +22,6 @@ public class ObjectDriver {
 		
 		Dog d = new Dog("Dog", true, "Pit", "short", "medium");
 		System.out.println(d);
-		
+	
 	}
 }
