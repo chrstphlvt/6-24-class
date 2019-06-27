@@ -1,5 +1,0 @@
-package com.revature.f.gc;
-
-public class GarbageCollectorDriver {
-
-}

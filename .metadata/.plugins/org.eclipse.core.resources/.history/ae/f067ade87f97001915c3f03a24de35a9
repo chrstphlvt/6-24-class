@@ -1,7 +1,0 @@
-package com.revature.e.arrays;
-
-public class ArraysDriver {
-	public static void main(String[] args) {
-		
-	}
-}
