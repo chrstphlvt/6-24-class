@@ -20,8 +20,7 @@ public class HomePrompt implements Prompt {
 			case "1":
 				return new ViewCardsPrompt();
 			case "2":
-				System.out.println("you sold a card");
-				break;
+				return new SellCardPrompt();
 			case "3":
 				System.out.println("you bought a card");
 				break;

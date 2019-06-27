@@ -1,5 +1,7 @@
 package com.revature.daos;
 
+import java.util.List;
+
 import com.revature.models.Card;
 
 /**
@@ -18,11 +20,11 @@ public interface CardDao {
 
 	void remove(Card c);
 
-	Card[] findAll();
+	List<Card> findAll();
 
-	Card[] findByGame(String game);
+	List<Card> findByGame(String game);
 
-	Card[] findByValue(double minimum, double maximum);
+	List<Card> findByValue(double minimum, double maximum);
 
-	Card[] findByNameContains(String name);
+	List<Card> findByNameContains(String name);
 }
