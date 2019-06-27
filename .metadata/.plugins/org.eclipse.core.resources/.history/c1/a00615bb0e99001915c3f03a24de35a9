@@ -1,0 +1,16 @@
+package com.revature.prompts;
+
+import java.util.Scanner;
+
+public class SellCardPrompt implements Prompt {
+	private Scanner scan = new Scanner(System.in);
+
+	@Override
+	public Prompt run() {
+		while (true) {
+			System.out.println("Enter card name: ");
+			String name = scan.nextLine();
+		}
+	}
+
+}

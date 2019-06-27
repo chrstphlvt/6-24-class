@@ -1,0 +1,12 @@
+package com.revature.prompts;
+
+public class SellCardPrompt implements Prompt {
+
+	@Override
+	public Prompt run() {
+		while (true) {
+
+		}
+	}
+
+}

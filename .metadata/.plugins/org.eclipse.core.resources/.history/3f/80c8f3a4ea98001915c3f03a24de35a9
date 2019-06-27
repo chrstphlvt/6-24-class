@@ -1,8 +1,0 @@
-package com.revature.daos;
-
-import com.revature.models.Card;
-
-public interface CardDao {
-
-	void save(Card c);
-}
