@@ -48,3 +48,5 @@ HELP.md
 /nbdist/
 /.nb-gradle/
 /build/
+/.metadata/
+/.recommenders/
