@@ -1,0 +1,22 @@
+package com.revature.d.objects;
+
+public class ObjectDriver {
+	public static void main(String[] args) {
+		Ball tennis = new Ball();
+		tennis.color = "green";
+		tennis.material = "rubber/felt";
+		tennis.radius = 2.5;
+		tennis.weight = 8;
+		
+		Ball footBall = new Ball();
+//		footBall.color = "brown";
+		footBall.material = "leather";
+//		footBall.radius = 5;
+		footBall.weight = 24;
+		
+		System.out.println(tennis);
+		System.out.println(footBall);
+		
+		
+	}
+}

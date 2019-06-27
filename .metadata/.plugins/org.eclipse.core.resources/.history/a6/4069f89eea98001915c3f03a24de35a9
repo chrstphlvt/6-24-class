@@ -1,0 +1,6 @@
+package com.revature.daos;
+
+public interface CardDao {
+
+	void save(Card);
+}

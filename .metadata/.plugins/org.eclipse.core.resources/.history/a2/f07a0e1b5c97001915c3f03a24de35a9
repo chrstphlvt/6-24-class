@@ -1,0 +1,17 @@
+package com.revature.d.objects;
+
+public class Ball {
+	public String color;
+	public double weight;
+	public String material;
+	public double radius;
+	
+	public Ball() {
+		
+	}
+	
+	@Override
+	public String toString() {
+		return "Ball [color=" + color + ", weight=" + weight + ", material=" + material + ", radius=" + radius + "]";
+	}
+}

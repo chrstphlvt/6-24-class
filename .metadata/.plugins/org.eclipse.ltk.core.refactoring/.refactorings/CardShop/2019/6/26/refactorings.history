@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename field &apos;cd&apos; in &apos;com.revature.prompts.ViewCardsPrompt&apos; to &apos;cardDao&apos;&#x0D;&#x0A;- Original project: &apos;CardShop&apos;&#x0D;&#x0A;- Original element: &apos;com.revature.prompts.ViewCardsPrompt.cd&apos;&#x0D;&#x0A;- Renamed element: &apos;com.revature.prompts.ViewCardsPrompt.cardDao&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" delegate="false" deprecate="false" description="Rename field &apos;cd&apos;" flags="589826" getter="false" id="org.eclipse.jdt.ui.rename.field" input="/src\/main\/java&lt;com.revature.prompts{ViewCardsPrompt.java[ViewCardsPrompt^cd" name="cardDao" references="true" setter="false" stamp="1561647934000" textual="false" version="1.0"/>
+</session>

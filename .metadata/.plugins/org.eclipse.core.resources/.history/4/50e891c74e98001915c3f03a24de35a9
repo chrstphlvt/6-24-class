@@ -1,0 +1,17 @@
+package com.revature.h.fizzbuzz;
+
+public class FizzBuzz {
+
+	public static String[] solution(int[] input) {
+
+		for (int i = 0; i < input.length; i++) {
+			System.out.println(input[i]);
+		}
+
+		return null;
+	}
+	
+	public static void main(String[] args) {
+		solution(new int[] {1,2,3,4,5,10,15,23,21,97,99,2135});
+	}
+}

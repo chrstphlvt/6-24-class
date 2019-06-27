@@ -1,0 +1,8 @@
+package com.revature.d.objects;
+
+public class Ball {
+	public String color;
+	public double weight;
+	public String material;
+	public double radius;
+}

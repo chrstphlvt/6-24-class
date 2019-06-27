@@ -1,0 +1,16 @@
+package com.revature.daos;
+
+import com.revature.models.Card;
+
+public interface CardDao {
+
+	void save(Card c);
+
+	void remove(Card c);
+
+	Card[] findByGame(String game);
+
+	Card[] findByValue(double minimum, double maximum);
+
+	Card[] findByNameContains(String name);
+}
