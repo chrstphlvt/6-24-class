@@ -36,6 +36,7 @@ HELP.md
 .sts4-cache
 .metadata
 .recommenders
+target
 
 ### IntelliJ IDEA ###
 .idea
