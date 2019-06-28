@@ -7,14 +7,16 @@ public class FlowOfControl {
 //		ifDemo(5);
 //		switchDemo(3);
 
-//		System.out.println(average(8, 2, 23));
-//		System.out.println(average(17, 97, 500));
+		System.out.println(average(8, 2, 23));
+		System.out.println(average(17, 97, 500));
+		System.out.println(average(5,3,2,1,8,9,15));
+		System.out.println(average(4,5));
 //		double result = average(17, 25, 3002);
 //		System.out.println(result);
 
 //		forDemo(10);
 //		whileDemo();
-		doWhileDemo();
+//		doWhileDemo();
 	}
 
 	/**
@@ -70,9 +72,12 @@ public class FlowOfControl {
 	 * @param three
 	 * @return the average
 	 */
-	public static double average(int one, int two, int three) {
-		int sum = one + two + three;
-		double avg = sum / 3;
+	public static double average(int...args) {
+		double sum = 0;
+		for(int number: args) {
+			sum += number;
+		}
+		double avg = sum / args.length;
 		return avg;
 	}
 

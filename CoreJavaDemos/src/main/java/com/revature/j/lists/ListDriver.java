@@ -1,5 +1,6 @@
 package com.revature.j.lists;
 
+import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -12,5 +13,11 @@ public class ListDriver {
 		numbers.add(0, 13); // insert new element at an index
 		numbers.set(1, 15); // replace element at index
 		System.out.println(numbers);
+
+		Iterator<Integer> iterate = numbers.iterator();
+		while(iterate.hasNext()) {
+			int number=iterate.next();
+			System.out.println(number);
+		}
 	}
 }
