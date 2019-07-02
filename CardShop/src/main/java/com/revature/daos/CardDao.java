@@ -14,7 +14,7 @@ import com.revature.models.Card;
  */
 public interface CardDao {
 
-	CardDao currentImplementation = new CardDaoInMemory();
+	CardDao currentImplementation = new CardDaoJsonFile();
 
 	void save(Card c);
 

@@ -1,0 +1,13 @@
+[ {
+  "name" : "Test",
+  "value" : 5.0,
+  "game" : "MTG",
+  "description" : "test",
+  "condition" : "new"
+}, {
+  "name" : "Test2",
+  "value" : 5.0,
+  "game" : "MtG",
+  "description" : "test2",
+  "condition" : "new"
+} ]
