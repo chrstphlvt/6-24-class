@@ -1,11 +1,13 @@
 package com.revature.o.palindrome;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class PalindromeDriver {
 	public static void main(String[] args) {
-		List<String> words = new ArrayList<>();
+		List<String> words = new LinkedList<>();
 		words.add("Radar");
 		words.add("Java");
 		words.add("Racecar");
@@ -17,8 +19,25 @@ public class PalindromeDriver {
 		words.add("Big O");
 		words.add("I");
 
-		List<String> result = filterPalindromes(words);
+		List<String> result = filterPalindromesRecursive(words);
 		System.out.println(result);
+		
+//		System.out.println(words.parallelStream().filter(word -> isPalindrome(word)).collect(Collectors.toList()));
+	}
+
+	private static List<String> filterPalindromesRecursive(List<String> words) {
+		List<String> l = new LinkedList<>();
+
+		if (isPalindrome(words.get(0))) {
+			l.add(words.get(0));
+		}
+
+		if (words.size() > 1) {
+			words.remove(0);
+			l.addAll(filterPalindromesRecursive(words));
+		}
+
+		return l;
 	}
 
 	private static List<String> filterPalindromes(List<String> words) {
