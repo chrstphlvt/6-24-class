@@ -9,7 +9,7 @@ class RussianNestingDoll {
     }
 }
 
-let doll1 =  new RussianNestingDoll(null, 'tiny', 'red');
+let doll1 = new RussianNestingDoll(null, 'tiny', 'red');
 let doll2 = new RussianNestingDoll(doll1, 'small', 'blue');
 let doll3 = new RussianNestingDoll(doll2, 'normal', 'green');
 let doll4 = new RussianNestingDoll(doll3, 'huge', 'yellow');
@@ -17,7 +17,7 @@ let doll4 = new RussianNestingDoll(doll3, 'huge', 'yellow');
 console.log(doll4);
 
 
-class Shirt {
+export class Shirt {
     constructor(
         public sleves: Sleeves = Sleeves.SLEEVELESS, 
         public color = '', 
@@ -35,6 +35,10 @@ enum Sleeves {
 }
 
 let s = new Shirt(Sleeves.LONG, 'green', false, 'xm');
-let s2 = new Shirt();
+export let s2 = new Shirt();
 console.log(s);
 console.log(s2);
+
+export default s;
+
+

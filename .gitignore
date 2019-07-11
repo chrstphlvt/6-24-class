@@ -53,3 +53,7 @@ target
 /build/
 /.metadata/
 /.recommenders/
+
+
+#node
+node_modules
