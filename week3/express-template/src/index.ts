@@ -27,6 +27,37 @@ app.get('/data', (req, res) => {
     });
 });
 
+app.post('/login', (req, res) => {
+    res.json({
+        username: 'btkruppa',
+        email: 'blake.kruppa@revature.com',
+        firstName: 'Blake',
+        lastName: 'Kruppa'
+    })
+});
+
+app.delete('/logout', (req, res) => {``
+    res.end();
+});
+
+
+app.get('/cards', (req, res) => {
+    res.send([
+        {
+            name: 'Island',
+            price: 0.15,
+            quality: 'new',
+            game: 'MTG'
+        },
+        {
+            name: 'Squirtle',
+            price: 2.5,
+            quality: 'used',
+            game: 'Pokemon'
+        }
+    ])
+})
+
 
 app.listen(port, () => {
     console.log('app started on port: ' + port)
