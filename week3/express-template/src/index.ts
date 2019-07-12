@@ -1,4 +1,5 @@
 import express from 'express';
+import bodyParser from 'body-parser';
 
 // specify the port will run on
 const port = 8012;
@@ -14,6 +15,9 @@ app.use((req, res, next) => {
     next(); // pass request on to search for the next piece of middleware
 });
 
+// set up body parser to convert json body to object stored on req.body
+app.use(bodyParser.json());
+
 app.get('/test', (req, res) => {
     res.send('this is a test endpoint');
 });
@@ -28,6 +32,7 @@ app.get('/data', (req, res) => {
 });
 
 app.post('/login', (req, res) => {
+    console.log('body = ', req.body); 
     res.json({
         username: 'btkruppa',
         email: 'blake.kruppa@revature.com',
