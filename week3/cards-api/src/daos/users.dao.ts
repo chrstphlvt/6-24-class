@@ -1,9 +1,9 @@
-import User from "../models/user";
+import User from '../models/user';
 
 let users: User[] = [
-    new User(1, 'btkruppa', 'password', 'blake.kruppa@revature.com', 'blake', 'kruppa', '90210'),
-    new User(2, 'bill', 'password', 'bill@revature.com', 'bill', 'bob', '90210'),
-    new User(3, 'larry', 'password', 'larry@revature.com', 'larry', 'the cableman', '90210'),
+    new User(1, 'btkruppa', 'password', 'blake.kruppa@revature.com', 'blake', 'kruppa', '90210', 'admin'),
+    new User(2, 'bill', 'password', 'bill@revature.com', 'bill', 'bob', '90210', 'manager'),
+    new User(3, 'larry', 'password', 'larry@revature.com', 'larry', 'the cableman', '90210', 'employee'),
 ];
 
 export function findAll(): User[] {
@@ -16,6 +16,10 @@ export function findById(id: number): User {
 
 export function findByFirstName(firstName: string): User[] {
     return users.filter(user => user.firstName === firstName);
+}
+
+export function findByUsernameAndPassword(username: string, password: string): User {
+    return users.filter(user => user.username === username && user.password === password)[0];
 }
 
 export function save(user?: User) {
@@ -36,22 +40,22 @@ export function save(user?: User) {
  * email: 'blake.kruppa@revature.com'
  * phone: '0903294'
  * }
- * 
+ *
  * {
  *  id: 1,
  *  phone: '9329304'
  * }
- * @param user 
+ * @param user
  */
 export function patch(user: Partial<User>) {
     users = users.map(ele => {
-        if(user.id === ele.id) {
+        if (user.id === ele.id) {
             return {
                 ...ele,
                 ...user
-            }
+            };
         } else {
-            return ele
+            return ele;
         }
     });
 }

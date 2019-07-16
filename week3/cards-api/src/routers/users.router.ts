@@ -1,5 +1,6 @@
 import express from 'express';
 import * as userDao from '../daos/users.dao';
+import { authMiddleware } from '../middleware/auth.middleware';
 
 // the user router represents a subset of the application
 // for all enpoints starting with /users
@@ -9,9 +10,11 @@ export const usersRouter = express.Router();
  * /users
  * find all users
  */
-usersRouter.get('', (req, res) => {
-    res.json(userDao.findAll());
-});
+usersRouter.get('', [
+    authMiddleware('admin', 'manager'),
+    (req, res) => {
+        res.json(userDao.findAll());
+    }]);
 
 
 /**
@@ -49,8 +52,14 @@ usersRouter.post('', (req, res) => {
  * partially update user resource
  */
 usersRouter.patch('', (req, res) => {
-    userDao.patch(req.body);
-    res.end();
+    const userId = req.body.id;
+    const currentLoggedInUser = req.session.user;
+    if (currentLoggedInUser && currentLoggedInUser.id === userId) {
+        userDao.patch(req.body);
+        res.end();
+    } else {
+        res.sendStatus(403);
+    }
 });
 
 /**

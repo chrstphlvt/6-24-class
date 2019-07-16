@@ -6,5 +6,5 @@ export default class Card {
         public value = 0,
         public quality = '',
         public owner = 0
-    ){}
+    ) {}
 }

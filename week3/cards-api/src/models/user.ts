@@ -6,6 +6,7 @@ export default class User {
         public email = '',
         public firstName = '',
         public lastName = '',
-        public phone = ''
-    ){}
+        public phone = '',
+        public role = ''
+    ) {}
 }
