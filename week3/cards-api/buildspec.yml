@@ -1,0 +1,7 @@
+version: 0.1
+phases:
+artifacts:
+  files:
+    - '**/*'
+  base-directory: 'week3/cards-api'
+  discard-paths: yes
