@@ -5,7 +5,8 @@ CREATE TABLE app_user (
 	first_name TEXT NOT NULL,
 	last_name TEXT NOT NULL,
 	phone TEXT,
-	email TEXT UNIQUE NOT NULL 
+	email TEXT UNIQUE NOT NULL,
+	role TEXT NOT NULL
 );
 
 CREATE TABLE game (

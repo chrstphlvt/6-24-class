@@ -1,10 +1,10 @@
-INSERT INTO app_user (username, pass, first_name, last_name, phone, email)
-	VALUES 	('btkruppa', 'pass', 'blake', 'kruppa', '09803924', 'blake.kruppa@revature.com'),
-			('edward', 'pass', 'edward', 'mcintire', '09803924', 'edward.mcintire@revature.com'),
-			('abdulla', 'pass', 'abdulla', 'aqrabawi', '09803924', 'abdula.aqrabawi@revature.com'),
-			('shay', 'pass', 'shay', 'gilchrist', '09803924', 'shay.gilchrist@revature.com'),
-			('stefan', 'pass', 'stefan', 'todorov', '09803924', 'stefan.todorov@revature.com'),
-			('larry', 'pass', 'larry', 'the cable man', '09803924', 'larry.the cable man@revature.com');
+INSERT INTO app_user (username, pass, first_name, last_name, phone, email, role)
+	VALUES 	('btkruppa', 'pass', 'blake', 'kruppa', '09803924', 'blake.kruppa@revature.com', 'admin'),
+			('edward', 'pass', 'edward', 'mcintire', '09803924', 'edward.mcintire@revature.com', 'employee'),
+			('abdulla', 'pass', 'abdulla', 'aqrabawi', '09803924', 'abdula.aqrabawi@revature.com', 'admin'),
+			('shay', 'pass', 'shay', 'gilchrist', '09803924', 'shay.gilchrist@revature.com', 'manager'),
+			('stefan', 'pass', 'stefan', 'todorov', '09803924', 'stefan.todorov@revature.com', 'employee'),
+			('larry', 'pass', 'larry', 'the cable man', '09803924', 'larry.the cable man@revature.com', 'manager');
 			
 INSERT INTO quality (quality_label) VALUES
 	('NM'), ('M'), ('OK'), ('BAD');
