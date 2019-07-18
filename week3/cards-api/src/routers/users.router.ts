@@ -40,24 +40,32 @@ usersRouter.get('/firstName/:firstName', async (req, res) => {
  * /users
  * create new user resource
  */
-usersRouter.post('', (req, res) => {
+usersRouter.post('', async (req, res) => {
     const user = req.body;
-    // userDao.save(user);
-
-    res.status(201); // created status code
-    res.json(user);
+    if (!user) {
+        res.sendStatus(400);
+    } else {
+        const id = await userDao.save(user);
+        if (!id) {
+            res.sendStatus(400);
+        } else {
+            user.id = id;
+            res.status(201); // created status code
+            res.json(user);
+        }
+    }
 });
 
 /**
  * /users
  * partially update user resource
  */
-usersRouter.patch('', (req, res) => {
+usersRouter.patch('', async (req, res) => {
     const userId = req.body.id;
     const currentLoggedInUser = req.session.user;
     if (currentLoggedInUser && currentLoggedInUser.id === userId) {
-        // userDao.patch(req.body);
-        res.end();
+        const updatedUser = await userDao.update(req.body);
+        res.json(updatedUser);
     } else {
         res.sendStatus(403);
     }

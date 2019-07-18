@@ -1,4 +1,5 @@
 import express from 'express';
+import * as cardDao from '../daos/sql-card.dao';
 
 export const cardsRouter = express.Router();
 
@@ -6,8 +7,9 @@ export const cardsRouter = express.Router();
  * /cards
  * Find all cards
  */
-cardsRouter.get('', (req, res) => {
-    res.send('finding all cards');
+cardsRouter.get('', async (req, res) => {
+    const cards = await cardDao.findAll();
+    res.json(cards);
 });
 
 /**
@@ -40,8 +42,20 @@ cardsRouter.get('/owner/:ownerId', (req, res) => {
  * /cards
  * create new card resource
  */
-cardsRouter.post('', (req, res) => {
-    res.send(`adding new card: ${JSON.stringify(req.body)}`);
+cardsRouter.post('', async (req, res) => {
+    const card = req.body;
+    if (!card) {
+        res.sendStatus(400);
+    } else {
+        const id = await cardDao.save(card);
+        if (!id) {
+            res.sendStatus(400);
+        } else {
+            card.id = id;
+            res.status(201); // created status code
+            res.json(card);
+        }
+    }
 });
 
 /**

@@ -1,3 +1,6 @@
+/**
+ * No longer in use
+ */
 import User from '../models/user';
 
 let users: User[] = [
