@@ -6,7 +6,7 @@ import { sessionMiddleware } from './middleware/session.middleware';
 import { authRouter } from './routers/auth.router';
 
 // specify the port will run on
-const port = 8012;
+const port = process.env.PORT || 8012;
 const app = express();
 
 /**
