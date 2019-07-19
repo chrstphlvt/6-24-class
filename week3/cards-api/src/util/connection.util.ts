@@ -7,6 +7,7 @@ const connectionConfiguration = {
     password: process.env.CARD_DB_PASSWORD,
     port: +process.env.CARD_DB_PORT || 5432,
     max: 5
-}
+};
+
 // console.log(connectionConfiguration);
 export const connectionPool = new Pool(connectionConfiguration)

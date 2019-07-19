@@ -25,6 +25,28 @@ export async function findAll() {
     return undefined;
 }
 
+export async function findByGameId(gameId: number) {
+    let client: PoolClient;
+    try {
+        client = await connectionPool.connect(); // basically .then is everything after this
+        const queryString = `
+        SELECT * FROM card
+        LEFT JOIN app_user USING (user_id)
+        INNER JOIN quality USING (quality_id)
+        INNER JOIN game USING (game_id)
+        WHERE game_id = $1`;
+        const result = await client.query(queryString, [gameId]);
+        // convert result from sql object to js object
+        return result.rows.map(cardConverter);
+    } catch (err) {
+        console.log(err);
+    } finally {
+        client && client.release();
+    }
+    console.log('found all');
+    return undefined;
+}
+
 
 export async function save(card: Card) {
     let client: PoolClient;

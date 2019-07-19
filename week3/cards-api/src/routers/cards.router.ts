@@ -13,6 +13,16 @@ cardsRouter.get('', async (req, res) => {
 });
 
 /**
+ * /cards
+ * Find all cards by game
+ */
+cardsRouter.get('/game/:gameId', async (req, res) => {
+    const gameId = +req.params.gameId;
+    const cards = await cardDao.findByGameId(gameId);
+    res.json(cards);
+});
+
+/**
  * /cards/game/:game
  * find cards by game
  */
