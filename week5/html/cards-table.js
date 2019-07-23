@@ -11,7 +11,7 @@ function addCardRow(card) {
             <td>${card.game && card.game.name}</td>
             <td>${card.quality && card.quality.label}</td>
             <td>${card.value}</td>
-            <td>${card.owner ? card.owner.name : '~'}</td>
+            <td>${card.owner ? card.owner.username : '~'}</td>
         </tr>
     `;
 }
@@ -43,7 +43,7 @@ function safeAddCardRow(card) {
     row.appendChild(valueData);
 
     const ownerData = document.createElement('td');
-    ownerData.innerText = card.owner ? card.owner.name : '~';
+    ownerData.innerText = card.owner ? card.owner.username : '~';
     row.appendChild(ownerData);
 
 }
@@ -112,6 +112,23 @@ addCardRow({
     },
     value: -300,
     owner: {
-        name: 'Matt'
+        username: 'Matt'
     }
 });
+
+async function loadData() {
+    const resp = await fetch('http://localhost:8012/cards', {
+        credentials: 'include'
+    });
+    const cards = await resp.json();
+    console.log(cards);
+    cards.forEach(safeAddCardRow);
+}
+
+loadData();
+
+
+const user = JSON.parse(localStorage.getItem('user'));
+if(user) {
+    document.getElementById('nav-username').innerText = user.username;
+}
