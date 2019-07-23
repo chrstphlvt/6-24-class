@@ -126,9 +126,3 @@ async function loadData() {
 }
 
 loadData();
-
-
-const user = JSON.parse(localStorage.getItem('user'));
-if(user) {
-    document.getElementById('nav-username').innerText = user.username;
-}

@@ -16,10 +16,16 @@
 
 <body>
     <nav id="app-nav"></nav>
-    <p id="joke-paragraph">Chuck Norris can get Chick Fil'a on Sunday</p>
-    <button class="btn btn-success" onclick="getNewJoke(event)">New Joke</button>
+    <form onsubmit="findPokemon(event)">
+        <input type="number" id="poke-number" placeholder="1">
+        <button type="submit">Submit</button>
+    </form>
+    <p id="poke-name">No pokemon requested yet</p>
+    <div id="sprite-container">
 
+    </div>
 </body>
+
 <!-- often people put js at bottom so html can load first -->
 <!-- Bootstrap js files -->
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
@@ -33,6 +39,6 @@
     crossorigin="anonymous"></script>
 
 <script src="../nav-component/nav.js"></script>
-<script src="chuck-norris.js"></script>
+<script src="pokemon.js"></script>
 
 </html>

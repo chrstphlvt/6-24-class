@@ -1,6 +1,7 @@
+console.log('hello');
 async function login(event) {
     event.preventDefault();
-
+    console.log('attempting to login');
     const username = document.getElementById('inputUsername').value;
     const password = document.getElementById('inputPassword').value;
     const credentials = {
