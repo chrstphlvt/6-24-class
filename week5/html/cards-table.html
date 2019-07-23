@@ -97,7 +97,7 @@
         </table>
     </div>
 
-    <form id="new-card-form">
+    <form id="new-card-form" onsubmit="submitNewCard(event)">
         <div class="flex-row">
             <div class="form-group">
                 <label for="card-name-input">Card Name</label>
@@ -110,11 +110,11 @@
             </div>
 
             <div class="btn-group">
-                <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"
+                <button id="condition-dropdown" type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"
                     aria-haspopup="true" aria-expanded="false">
                     Condition
                 </button>
-                <div class="dropdown-menu">
+                <div class="dropdown-menu" onclick="updateCondition(event)">
                     <a class="dropdown-item">Mint</a>
                     <a class="dropdown-item">Near Mint</a>
                     <a class="dropdown-item">Okay</a>
@@ -123,11 +123,11 @@
             </div>
 
             <div class="btn-group">
-                <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"
+                <button id="game-dropdown" type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"
                     aria-haspopup="true" aria-expanded="false">
                     Game
                 </button>
-                <div class="dropdown-menu">
+                <div class="dropdown-menu" onclick="updateGameDropdown(event)">
                     <a class="dropdown-item">MTG</a>
                     <a class="dropdown-item">Pokemon</a>
                     <a class="dropdown-item">Poker</a>
@@ -135,8 +135,11 @@
                 </div>
             </div>
         </div>
-
-        <button class="btn btn-success" type="submit" style="align-self: center">Submit</button>
+        <div class="flex-row">
+            <button class="btn btn-success" type="submit" style="align-self: center">Submit</button>
+            <button class="btn btn-success" style="align-self: center" onclick="safeSubmitNewCard(event)">Safe Submit</button>
+        </div>
+        
     </form>
 
 </body>
