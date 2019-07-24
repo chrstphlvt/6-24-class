@@ -3,6 +3,10 @@ phases:
   install:
     runtime-versions:
       nodejs: 10
+  pre_build:
+    commands: 
+      - cd week3/cards-api
+      - npm run lint
 artifacts:
   files:
     - '**/*'
